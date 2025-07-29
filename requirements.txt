@@ -1,0 +1,2 @@
+sap-ai-sdk-gen>=5.4.2
+pocketflow>=0.0.3
