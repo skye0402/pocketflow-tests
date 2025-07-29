@@ -12,7 +12,7 @@ A simple text-based chat application that integrates SAP GenAI Hub with PocketFl
 
 ## Prerequisites
 
-- Python 3.8+
+- Python 3.11+
 - SAP Business Technology Platform (BTP) account with access to SAP AI Core and GenAI Hub
 - Required environment variables (see Configuration section)
 
