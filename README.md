@@ -71,6 +71,22 @@ To start the simple chat application:
 
 4. Start chatting! Type your messages and press Enter. To exit, type 'exit' or press Ctrl+C.
 
+### MCP Server Example
+
+To run the MCP server example that demonstrates tool usage:
+
+1. Make sure your virtual environment is activated
+2. Run the following command to test a calculation:
+   ```bash
+   python -m mcp_simple.main --"What is 10 minus 2?"
+   ```
+
+3. Try other operations:
+   ```bash
+   python -m mcp_simple.main --"What is 15 plus 27?"
+   python -m mcp_simple.main --"What is the weather in Tokyo?"
+   ```
+
 ### Other Examples
 
 *More examples coming soon!*
