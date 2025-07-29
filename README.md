@@ -50,19 +50,37 @@ A simple text-based chat application that integrates SAP GenAI Hub with PocketFl
 
 ## Usage
 
-1. Start the chat application:
+### Chat Example
+
+To start the simple chat application:
+
+1. Navigate to the project root directory:
    ```bash
-   python chat_app.py
+   cd /path/to/pocketflow
    ```
 
-2. Type your message and press Enter to chat with the AI.
+2. Activate the virtual environment (if not already activated):
+   ```bash
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   ```
 
-3. Type 'exit' to end the conversation.
+3. Run the chat application:
+   ```bash
+   python -m chat_simple.main
+   ```
+
+4. Start chatting! Type your messages and press Enter. To exit, type 'exit' or press Ctrl+C.
+
+### Other Examples
+
+*More examples coming soon!*
 
 ## Project Structure
 
-- `chat_app.py`: Main application script with the chat interface
-- `utils.py`: Utility functions for interacting with SAP GenAI Hub
+- `chat_simple/`: Simple chat application example
+  - `main.py`: Main application script with the chat interface
+- `common/`: Shared utilities
+  - `utils.py`: Utility functions for interacting with SAP GenAI Hub
 - `.env.example`: Example environment variables file (copy to .env and fill in your credentials)
 - `requirements.txt`: Python dependencies
 

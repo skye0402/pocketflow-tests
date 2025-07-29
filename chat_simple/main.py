@@ -7,7 +7,7 @@ from pocketflow import Node, Flow
 load_dotenv()
 
 # Import the call_llm function from utils
-from utils import call_llm
+from common.utils import call_llm
 
 class ChatNode(Node):
     """A node that handles the chat interaction with the user."""

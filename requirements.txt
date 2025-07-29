@@ -1,2 +1,4 @@
+python-dotenv>=1.0.1
 sap-ai-sdk-gen>=5.4.2
 pocketflow>=0.0.3
+fastmcp>=2.10.6

@@ -1,13 +1,16 @@
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
+
 from gen_ai_hub.proxy.native.openai import chat
 from typing import List, Dict, Any, Optional
 
-def call_llm(messages: List[Dict[str, str]], model_name: str = "gpt-4.1") -> str:
+def call_llm(messages, model_name: str = "gpt-4.1") -> str:
     """
     Call the SAP GenAI Hub API with the given messages using the native OpenAI-compatible interface.
     
     Args:
-        messages: List of message dictionaries with 'role' and 'content' keys
-        model_name: Name of the model to use (default: "gpt-4")
+        messages: Either a string (treated as user message) or a list of message dictionaries with 'role' and 'content' keys
+        model_name: Name of the model to use (default: "gpt-4.1")
         
     Returns:
         The generated response as a string
@@ -16,6 +19,13 @@ def call_llm(messages: List[Dict[str, str]], model_name: str = "gpt-4.1") -> str
         Exception: If there's an error calling the API
     """
     try:
+        # Convert string input to a list of messages if needed
+        if isinstance(messages, str):
+            messages = [{"role": "user", "content": messages}]
+        # Ensure messages is a list if it's not already
+        elif not isinstance(messages, list):
+            messages = [{"role": "user", "content": str(messages)}]
+            
         # Call the chat completions API using the native OpenAI-compatible interface
         response = chat.completions.create(
             model_name=model_name,
