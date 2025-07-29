@@ -5,7 +5,7 @@ from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 
 # Global flag to control whether to use MCP or local implementation
-MCP = False
+MCP = True
 
 def get_tools(server_script_path=None):
     """Get available tools, either from MCP server or locally based on MCP global setting."""

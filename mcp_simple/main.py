@@ -4,12 +4,14 @@ from common.utils import call_llm
 import yaml
 import sys, os
 
+SERVER_PATH = "./mcp_simple/simple_mcp_server.py"
+
 class GetToolsNode(Node):
     def prep(self, shared):
         """Initialize and get tools"""
         # The question is now passed from main via shared
         print("🔍 Getting available tools...")
-        return "simple_server.py"
+        return SERVER_PATH
 
     def exec(self, server_path):
         """Retrieve tools from the MCP server"""
@@ -108,7 +110,7 @@ class ExecuteToolNode(Node):
         """Execute the chosen tool"""
         tool_name, parameters = inputs
         print(f"🔧 Executing tool '{tool_name}' with parameters: {parameters}")
-        result = call_tool("simple_server.py", tool_name, parameters)
+        result = call_tool(SERVER_PATH, tool_name, parameters)
         return result
 
     def post(self, shared, prep_res, exec_res):
